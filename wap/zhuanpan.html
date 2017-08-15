@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<title>大转盘</title>
+
+<style>
+* {margin:0;padding:0}
+img {border:none}
+ul,ol,li {list-style:none}
+
+body {
+	background: #7E65AB;
+}
+
+html,body {
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
+	font-family: "Microsoft Yahei";
+}
+
+.circle {
+	width: 300px;
+	height: 300px;
+	background: url('../wap/img/disk.jpg');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	border-radius: 50%;
+	position: relative;
+	margin:0 auto;
+
+}
+
+.point {
+	width: 100px;
+	height: 195px;
+	background: url('../wap/img/start.png') no-repeat;
+	position: absolute;
+	margin:-97px 0 0 -50px;
+	left:50%;
+	top:50%;
+}
+
+.shadow {
+	width: 300px;
+	height: 300px;
+	margin-left:-150px;
+	position: absolute;
+	top:0;
+	left:50%;
+	z-index: 2;
+}
+
+.grade {
+	position: absolute;
+	left:0;
+	top:0;
+	width: 70px;
+	height: 50px;
+	overflow: hidden;
+	text-align: center;
+	z-index: 5;
+	color:#fff;
+	font-size: 12px;
+}
+
+.cicrle-area {
+	position: relative;
+	width: 300px;
+	height: 300px;
+	overflow: hidden;
+	margin:0 auto;
+}
+
+.cicrle-title {
+	text-align: center;
+	color:#fff;
+	padding:10px 0;
+	font-size: 2rem;
+}
+
+.prize-list {
+	width: 90%;
+	margin:0 auto;
+	background: #fff;
+	border-radius: 5px;
+	padding: 2px;
+	box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+.box {
+	border-radius: 5px;
+	font-size: 14px;
+	border: 1px dashed rgba(0, 0, 0, 0.3);
+}
+
+.title-red {
+	padding: 0 5px 0px 10px;
+	background: url(./img/title-bg-red.png) no-repeat 0 0;
+	border-radius: 3px 3px 3px 0;
+	color: #ffffff;
+	height: 22px;
+	margin: -1px;
+}
+
+.detail {
+	padding: 15px;
+}
+
+.detail p {
+	line-height: 23px;
+}
+
+.prize-list {
+	margin-top:30px;
+}
+
+.ml-10 {
+	margin-left: 10px;
+}
+
+.mr-10 {
+	margin-right: 10px;
+}
+
+.mb-20 {
+	margin-bottom: 20px;
+}
+
+.clearfix {
+	zoom:1
+}
+.clearfix:after {
+	visibility:hidden;
+	display:block;
+	font-size:0;
+	content:" ";
+	clear:both;
+	height:0;
+}
+
+.zhuan-pan {
+	display: none;
+}
+
+.loading-text {
+	text-align: center;
+	color:#fff;
+	position: absolute;
+	height: 30px;
+	width: 100%;
+	margin-top:-15px;
+	top:50%;
+}
+</style>
+</head>
+
+<body>
+<section class="loading-text" loading>页面加载中...</section>
+
+<section class="zhuan-pan" main>
+
+	<section class="cicrle-title" prize-title>
+		
+	</section>
+
+	<section class="cicrle-area">
+		<div class="circle" id="circle" grade-wrap>
+			
+		</div>
+
+		<div class="shadow">
+			<div class="point" id="point"></div>
+		</div>
+	</section>
+
+	<section class="prize-list">
+		<div class="box"></div>
+		<div class="title-red">
+			<span>奖项设置：</span>
+		</div>
+		<div class="detail" prize-list>
+			
+	   	</div>
+	</section>
+
+	<section class="prize-list mb-20">
+		<div class="box"></div>
+		<div class="title-red">
+			<span>活动说明：</span>
+		</div>
+		<div class="detail" prize-issue>
+			 
+	   	</div>
+	</section>
+
+</section>
+
+
+
+<script src="./sea.js"></script>
+<script>
+	seajs.config({
+		preload:['js/lib/zepto/zepto']
+	})
+
+	seajs.use('js/main/zhuanpan');
+</script>
+
+</body>
+</html>

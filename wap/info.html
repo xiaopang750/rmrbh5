@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<title></title>
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/info.css">
+</head>
+
+<body>
+
+<div id="page">
+	
+</div>
+
+<script type="text/html" id="info-temp">
+<div class="head">
+		<div class="user-image-wrap">
+			<div class="user-image">
+				<img src="{{if member.vdef1}}{{member.vdef1}}{{else}}img/deji.jpg{{/if}}" width="120" height="120">
+			</div>
+		</div>
+		<p class="tc mt_5 font_28 white">{{member.membername}}</p>
+		<div class="tab-head-wrap">
+			<ul>
+				<li class="active" tab-head-btn>
+					<span class="icon star mt_10"></span>
+					<span class="tab-name">优惠券</span>
+				</li>
+				<li tab-head-btn>
+					<span class="icon score mt_10"></span>
+					<span class="tab-name">我的信息</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="tabc-content-wrap">
+		<div class="content my-sale" tab-content>
+			<ul>
+				{{each coupons}}
+				<li>
+					<div class="ticket">
+						<img src="./img/ticket.png" width="100%"> 
+						<span class="price">
+							<span class="number">{{$value.couponsLimit}}</span>
+							<span class="yuan">YUAN</span>
+						</span> 
+						<span class="typer">优惠券</span> 
+						<div class="time"> 
+							<p>验证码:{{$value.couponsCode}}</p> 
+							<p>
+								有效期:
+								<span class="mr-5">{{$value.startDate}}</span> 
+								<span>-</span> 
+								<span>{{$value.endDate}}</span> 
+							</p>  
+						</div> 
+					</div>
+				</li>
+				{{/each}}
+			</ul>
+		</div>
+		<div class="content my-info none" tab-content>
+			<ul>
+				<li>
+					<div class="inner clearfix">
+						<span class="icon nick fl mt_5 mr_10"></span>
+						<span class="name fl mt_12">昵称</span>
+						<span class="icon point fr"></span>
+						<span class="fr mr_10 mt_12">{{member.nickname}}</span>
+					</div>
+				</li>
+				<li>
+					<div class="inner clearfix">
+						<span class="icon realname fl mt_5 mr_10"></span>
+						<span class="name fl mt_12">真实姓名</span>
+						<span class="icon point fr"></span>
+						<span class="fr mr_10 mt_12">{{member.membername}}</span>
+					</div>
+				</li>
+				<li>
+					<div class="inner clearfix">
+						<span class="icon tel fl mt_5 mr_10"></span>
+						<span class="name fl mt_12">联系方式</span>
+						<span class="icon point fr"></span>
+						<span class="fr mr_10 mt_12">{{member.cellphone}}</span>
+					</div>
+				</li>
+				<li>
+					<div class="inner clearfix">
+						<span class="icon add fl mt_5 mr_10"></span>
+						<span class="name fl mt_12">联系地址</span>
+						<span class="icon point fr"></span>
+						<span class="fr mr_10 mt_12">{{member.addr}}</span>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>	
+</script>
+
+<script src="./sea.js"></script>
+<script>
+	seajs.config({
+		preload:['js/lib/zepto/zepto']
+	});
+
+	seajs.use('js/main/info');
+</script>
+</body>
+</html>

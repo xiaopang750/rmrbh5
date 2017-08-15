@@ -1,0 +1,102 @@
+body {
+	background: url('../img/ticket_bg.jpg') no-repeat;
+	background-size: 100% 100%;
+}
+
+html,body {
+	width: 100%;
+	overflow-x:hidden;
+	min-height: 100%;
+}
+
+[page-wrap] {
+	width: 90%;
+	margin:0 auto;
+}
+
+.ticket {
+	width: 100%;
+	z-index: 6;
+	color:#fff;
+	position: relative;
+	margin:10px 0;
+}
+
+.ticket img {
+	display: block;
+}
+
+.price {
+	position: absolute;
+	left:42px;
+	top:2px;
+}
+
+.number {
+	font-size: 3.5rem;
+}
+
+.yuan {
+	font-size: 0.8rem;
+	margin-left:5px;
+	position: relative;
+	top:-2rem;
+}
+
+.type {
+	position: absolute;
+	left:0;
+	top:0;
+}
+
+.time {
+	position: absolute;
+	left:10px;
+	bottom:13px;
+	font-size: 1rem;
+}
+
+.rmb {
+	position: absolute;
+	left:9px;
+	top:15px;
+	font-size: 28px;
+}
+
+.typer {
+	position: absolute;
+	right:20px;
+	top:10px;
+	font-size: 1.5rem;
+}
+
+.am-btn {
+	display: block;
+	width: 100%;
+	padding-left: 0;
+	padding-right: 0;
+	color: #fff;
+	background-color: #5eb95e;
+	border-color: #4db14d;
+	display: inline-block;
+	margin-bottom: 0;
+	font-weight: 400;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	background-image: none;
+	border: 1px solid transparent;
+	white-space: nowrap;
+	padding: .625em 1em;
+	border-radius: 2px;
+	line-height: 1.2;
+	font-size: 1.6rem;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+	-webkit-transition: width .15s;
+	transition: width .15s;
+	outline: none;
+}

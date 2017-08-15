@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<title></title>
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/coupons.css">
+</head>
+
+<body>
+
+<div page-wrap>
+	
+</div>
+
+<script type="text/html" id="page">
+	<div class="ticket">
+		<img src="{{coupons.couponsPic}}" width="100%">
+		<span class="rmb">￥</span> 
+		<span class="price">
+			<span class="number">{{coupons.couponsLimit}}</span>
+			<span class="yuan">YUAN</span>
+		</span> 
+		<span class="typer">优惠券</span> 
+		<div class="time"> 
+			<p>有效期:</p> 
+			<p> 
+				<span class="mr-5">{{coupons.startDate}}</span> 
+				<span>-</span> 
+				<span>{{coupons.endDate}}</span> 
+			</p> 
+		</div> 
+	</div>
+	<button class="am-btn am-btn-success am-btn-block" data-doc-animation="scale-down" get-btn>领取</button>
+</script>
+
+<script src="./sea.js"></script>
+<script>
+	seajs.config({
+		preload:['js/lib/zepto/zepto']
+	});
+
+	seajs.use('js/main/coupons');
+</script>
+</body>
+</html>

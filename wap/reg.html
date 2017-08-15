@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<title>报名</title>
+<style>
+	* {
+		margin:0;
+		padding:0;
+	}
+
+	img {
+		border:none;
+	}
+
+	body {
+		font-family: "Microsoft Yahei";
+	}
+
+	ul,ol,li {
+		list-style: none;
+	}
+
+	#bg {
+		width: 100%;
+		position: fixed;
+		left:0;
+		top:0;
+		z-index: -1;
+	}
+
+	.form-wrap {
+		width: 90%;
+		margin:20px auto 0 auto;
+	}
+
+	.form-wrap tr td {
+		font-size: 1.2rem;
+		padding-bottom: 20px;
+	}
+
+	.form-wrap input {
+		width: 100%;
+		height: 28px;
+		line-height: 28px;
+		background:#fff;
+		padding-left:2px;
+	}
+
+	.form-wrap button {
+		width: 100px;
+		height: 30px;
+	}
+
+	.tc {
+		text-align: center;
+		margin:20px 0;
+	}
+</style>
+</head>
+
+<body>
+	<img src="img/car_bg.jpg" id="bg">
+	<div class="form-wrap">
+		<div class="tc">欢迎报名</div>
+		<table cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td>姓名：</td>
+				<td><input type="text" namer></td>
+			</tr>
+			<tr>
+				<td>电话：</td>
+				<td><input type="text" tel></td>
+			</tr>
+			<tr>
+				<td>公司：</td>
+				<td><input type="text" com></td>
+			</tr>
+			<tr>
+				<td>地址：</td>
+				<td><input type="text" add></td>
+			</tr>
+			<tr>
+				<td>描述：</td>
+				<td><input type="text" des></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<button btn>报名</button>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+<script src="./sea.js"></script>
+<script>
+	seajs.config({
+		preload:['js/lib/zepto/zepto']
+	})
+
+	seajs.use('js/main/reg');
+</script>
+</body>
+</html>

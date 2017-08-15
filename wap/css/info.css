@@ -1,0 +1,201 @@
+html,body {
+	min-height: 100%;
+}
+
+.head {
+	width: 100%;
+	height: 250px;
+	background: -webkit-linear-gradient( -60deg,#d86536,#db1965);
+	background: -moz-linear-gradient( -60deg,#d86536,#db1965);
+	background: -o-linear-gradient( -60deg,#d86536,#db1965);
+	background: -ms-linear-gradient( -60deg,#d86536,#db1965);
+	position: relative;
+}
+
+.user-image-wrap {
+	width: 140px;
+	height: 140px;
+	margin:0 auto;
+	border:1px solid #fff;
+	border-radius: 100%;
+	position: relative;
+}
+
+.user-image {
+	width: 120px;
+	height: 120px;
+	position: absolute;
+	margin:-62px 0 0 -62px;
+	left:50%;
+	top:50%;
+	background: #fff;
+	padding: 2px;
+	border-radius: 100%;
+}
+
+.user-image img {
+	border-radius: 100%;
+	box-shadow: 1px 1px 10px #ccc;
+}
+
+.content {
+	width: 100%;
+}
+
+.my-info ul li {
+	width: 100%;
+	height: 52px;
+	border-bottom: 1px solid #ccc;
+	font-size: 18px;
+	overflow: hidden;
+	padding:10px 0;
+}
+
+.my-info ul li .detail {
+	color:#898989;
+}
+
+.my-info ul li .inner {
+	width: 90%;
+	margin:0 auto;
+}
+
+.icon {
+	display: inline-block;
+	background: url('../img/info.png') no-repeat;
+}
+
+.icon.nick {
+	width: 40px;
+	height: 40px;
+	background-position: 0 -133px;
+}
+
+.icon.realname {
+	width: 40px;
+	height: 40px;
+	background-position: -53px -133px;
+}
+
+.icon.tel {
+	width: 40px;
+	height: 40px;
+	background-position: -100px -133px;
+}
+
+.icon.add {
+	width: 40px;
+	height: 40px;
+	background-position: -152px -133px;
+}
+
+.icon.point {
+	width: 19px;
+	height: 25px;
+	background-position: -38px -51px;
+	margin-top: 12px;
+}
+
+.icon.star {
+	width: 35px;
+	height: 34px;
+	background-position: 0 -19px;
+}
+
+.icon.score {
+	width: 27px;
+	height: 31px;
+	background-position: 0 -78px;
+}
+
+.tab-head-wrap {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left:0;
+}
+
+.tab-head-wrap ul li {
+	width: 50%;
+	height: 60px;
+	background:#fc563c;
+	float: left;
+	font-size: 20px;
+	color:#fff;
+	text-align: center;
+	line-height: 60px;
+}
+
+.tab-head-wrap ul li.active {
+	background: #f23027;
+}
+
+.tab-name {
+	position: relative;
+	top:-7px;
+	left:5px;
+}
+
+
+/* sale */
+.my-sale {
+	width: 90%;
+	margin:0 auto;
+}
+
+.ticket {
+	width: 100%;
+	z-index: 6;
+	color:#fff;
+	position: relative;
+	margin:10px 0;
+}
+
+.ticket img {
+	display: block;
+}
+
+.price {
+	position: absolute;
+	left:42px;
+	top:2px;
+}
+
+.number {
+	font-size: 3.5rem;
+}
+
+.yuan {
+	font-size: 0.8rem;
+	margin-left:5px;
+	position: relative;
+	top:-2rem;
+}
+
+.type {
+	position: absolute;
+	left:0;
+	top:0;
+}
+
+.time {
+	position: absolute;
+	left:10px;
+	bottom:13px;
+	font-size: 1rem;
+}
+
+.typer {
+	position: absolute;
+	right:20px;
+	top:10px;
+	font-size: 1.5rem;
+}
+
+
+
+
+
+
+
+

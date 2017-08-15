@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.ui.theme" value="simple"></constant>
+    <constant name="struts.action.extension" value="do,action,,"></constant>
+<!--   会员模块-->
+	<package name="rmrb-member" namespace="/member" extends="rmrb-default">
+		<!-- 会员基本信息部分开始 -->
+			<!-- 绑定会员信息 -->
+			<action name="bindMember" class="com.rsdataservice.o2o.action.member.MemberAction" method="bindMember">
+				<result type="json"></result>
+			</action>
+			<!-- 修改会员信息 -->
+			<action name="updateMember" class="com.rsdataservice.o2o.action.member.MemberAction" method="updateMember">
+				<result type="json"></result>
+			</action>
+			<!-- 取消绑定 -->
+			<action name="cancelBind" class="com.rsdataservice.o2o.action.member.MemberAction" method="cancelBind">
+				<result type="json"></result>
+			</action>
+			<!-- 根据渠道和openid查看会员信息 -->
+			<action name="findMemberInfo" class="com.rsdataservice.o2o.action.member.MemberAction" method="findByFromAndOpenid">
+				<result type="json"></result>
+			</action>
+			<action name="findMemberForPk" class="com.rsdataservice.o2o.action.member.MemberAction" method="findMember">
+				<result type="json"></result>
+			</action>
+				<!-- 查看会员基本信息 -->
+			<action name="findMemberBaseInfo" class="com.rsdataservice.o2o.action.member.MemberBaseInfoAction" method="findBaseInfo">
+				<result type="json"></result>
+			</action>
+		<!-- 会员基本信息部分结束 -->
+	</package>
+</struts>
+
+
+
+
+
+

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<include file="struts-activity.xml"></include>
+	<include file="struts-member.xml"></include>
+	<include file="struts-mobilesite.xml"></include>
+	<include file="struts-luckturntable.xml"></include>
+	<include file="struts-coupons.xml"></include>
+	<include file="struts-survey.xml"></include>
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+    <constant name="struts.devMode" value="false" />
+    <constant name="struts.ui.theme" value="simple"></constant>
+    <constant name="struts.action.extension" value="do,action,,"></constant>
+	<package name="rmrb-default" namespace="" extends="json-default">
+      <global-results>
+         <result name="errHandler" type="chain">
+                <param name="actionName">errorProcessor</param>
+           </result>
+      </global-results>
+
+  	  <global-exception-mappings>
+            <exception-mapping result="errHandler" exception="java.lang.Exception"/>  
+      </global-exception-mappings>
+	  <action name="errorProcessor" class="com.rsdataservice.o2o.action.ErrorProcessAction">
+             <result>../exc.jsp</result>
+ 	  </action>
+	</package>
+</struts>
+
+
+
+
+
+

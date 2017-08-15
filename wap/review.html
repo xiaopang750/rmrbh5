@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<title>活动评论</title>
+<style>
+	* {
+		margin:0;
+		padding:0;
+	}
+
+	img {
+		border:none;
+	}
+
+	ul,ol,li {
+		list-style: none;
+	}
+
+	html,body {
+		overflow-x:hidden;
+		font-family: "Microsoft Yahei";
+	}
+
+	.review_content{
+		margin: 2px;
+		padding:14px;
+		border-bottom: 1px solid #dedede;
+	}
+
+	.review{
+		font-size:1rem;
+	}
+
+	.reviewHref{
+		text-decoration:none;
+		color:#ccc;
+	}
+
+	.ch_div{
+		left:20px;
+		position: relative;
+		margin:15px 0;
+		padding-right: 10px;
+	}
+
+	.span_color{
+		color:#2d2d2d;
+	}
+
+	.time_font{
+		font-size:1rem;
+	}
+
+	.area {
+		width: 100%;
+		height: 50px;
+	}
+
+	button {
+		color: #fff;
+		background-color: #5eb95e;
+		border-color: #4db14d;
+		display: inline-block;
+		font-weight: 400;
+		text-align: center;
+		vertical-align: middle;
+		cursor: pointer;
+		background-image: none;
+		border: 1px solid transparent;
+		white-space: nowrap;
+		padding: 0.5em;
+		border-radius: 2px;
+		line-height: 1.2;
+		font-size: 1rem;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		-o-user-select: none;
+		user-select: none;
+		-webkit-transition: width .15s;
+		transition: width .15s;
+		-webkit-appearance: button;
+		margin:15px 0;
+		overflow: visible;
+	}
+
+	.wrap {
+		width: 96%;
+		margin:0 auto;
+	}
+
+	.wrap textarea {
+		margin-top: 10px;
+		border:1px solid #ccc;
+		resize:none;
+		border-radius: 2px;
+		color:#666;
+		font-size: 12px;
+		padding:5px;
+	}
+
+	.gray {
+		color:#b7b7b7;
+	}
+
+	.reply-name {
+		display: none;
+	}
+
+	.font-14 {
+		font-size: 14px;
+	}
+
+	.font-12 {
+		font-size: 12px;
+	}
+
+	.mb-5 {
+		margin-bottom: 5px;
+	}
+
+	.block {
+		display: block;
+	}
+
+	.blue {
+		color:#3385ff;
+	}
+</style>
+<script type="text/javascript">
+	
+</script>
+</head>
+
+<body>
+	<div class="wrap">
+		<input type="text" disabled="disabled" name="reviewLabel" class="reply-name"/>
+		<input type="hidden" name="reviewName"/>
+		<input type="hidden" name="parentId" value="0"/>
+		<textarea name="review_content" class="area"></textarea>
+	<button onclick="addTopReview()">提交评论</button>
+	</div>
+	<div  style="width: 100%;height:100%;word-break:break-all;" data-wrap list-wrap class="review">
+		
+	</div>
+<script type="text/html" id="list">
+	{{each reviews}}
+	<div class="review_content" child-wrap>
+		<div>
+			<span class="mb-5 block">
+				<span class="span_color">{{$value.reviewPerson}}</span>&nbsp;&nbsp;<span class="blue">{{$value.reviewContent}}</span>
+				<a href='javascript:;' class='reviewHref' onclick="reviewCh(this, '{{$value.reviewPerson}}','{{$value.pkReview}}')">回复</a>
+			</span>
+			<span class="time_font">{{$value.reviewTime}}</span>&nbsp;
+		</div>
+		{{include 'child' $value}}
+	</div>
+	{{/each}}
+</script>
+
+<script type="text/html" id="child">
+<div list-wrap>
+{{each reviews as $value2 index}}
+	<div class="ch_div">
+		<span class="span_color">{{$value2.reviewPerson}}</span>&nbsp;回复&nbsp;
+		<span class="span_color">{{$value2.reviewTarget}}</span>：&nbsp;&nbsp;
+		<span class="blue">{{$value2.reviewContent}}</span>
+		</br>
+		<span class="time_font">{{$value2.reviewTime}}</span>&nbsp;<a href='javascript:;' class='reviewHref' onclick="reviewCh(this, '{{$value2.reviewPerson}}','{{pkReview}}')">回复</a>
+	</div>
+{{/each}}
+</div>
+</script>
+
+<script src="./sea.js"></script>
+<script>
+	seajs.config({
+		preload:['js/lib/zepto/zepto']
+	})
+
+	seajs.use('js/main/review');
+</script>
+</body>
+</html>

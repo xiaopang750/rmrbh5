@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<title></title>
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/reset.css">
+<style>
+	.page-wrap {
+		width: 90%;
+		margin:10px auto 0 auto;
+	}
+
+	.page-wrap ul li img {
+		width: 100px;
+	}
+
+	.page-wrap ul li {
+		border-bottom: 1px solid #ccc;
+		padding:10px 0;
+	}
+</style>
+</head>
+
+<body>
+<div class="page-wrap" page-wrap>
+	
+</div>
+
+<script type="text/html" id="page">
+<ul>
+	{{each exchanges}}
+	<li>
+		<dl class="clearfix">
+			<dt class="fl">
+				<img src="{{$value.productPrcUrl}}" alt="{{$value.exchangeProduct}}">
+				<p>{{$value.exchangeProduct}}</p>
+			</dt>
+			<dd class="fr">
+				<span>所需积分：</span>{{$value.exchangeIntegral}}
+			</dd>
+		</dl>
+	</li>
+	{{/each}}
+</ul>
+</script>
+
+<script src="./sea.js"></script>
+<script>
+	seajs.config({
+		preload:['js/lib/zepto/zepto']
+	});
+	seajs.use('js/main/product');
+</script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+<title></title>
+<link rel="stylesheet" href="css/meeting.css" />
+</head>
+
+<body page-wrap  ontouchmove="event.preventDefault();">
+
+<script type="text/html" id="model_01">
+<div data-role="down" class="lead">
+	<img src="img/down.png" />
+	<p>向下滑动</p>
+</div>
+
+<div data-role="up" class="lead">
+	<img src="img/up.png" />
+	<p>向上滑动</p>
+</div>
+
+
+
+<div class="layer" pageIndex="6" data-role="layer">
+	<div class="banner">
+		<img src="{{modelValue[0].theme}}" width="100%">
+	</div>
+	<div class="lay1">
+		<h2>{{modelValue[0].title}}</h2>
+		<p>{{modelValue[0].content}}</p>
+	</div>
+	<div class="bg">
+		<img src="{{modelValue[0].bg}}" width="100%" height="100%">
+	</div>
+</div>	
+
+
+<div class="layer" pageIndex="5" data-role="layer">
+	<div class="bg">
+		<img src="{{modelValue[1].bg}}" width="100%" height="100%">
+	</div>
+	<div class="lay lay2">
+		<div>
+			<ul>
+				{{each modelValue[1].List}}
+				<li sc="fadeList">
+					<dl>
+						<dt>{{$value.date}}</dt>
+						<dd>{{$value.plane}}</dd>
+					</dl>
+				</li>
+				{{/each}}
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="layer" pageIndex="4" data-role="layer">
+	<div class="bg">
+		<img src="{{modelValue[2].bg}}" width="100%" height="100%">
+	</div>
+	<div class="lay lay3">
+		<div>
+			<ul class="left-content" sc="page3-left">
+				{{each modelValue[2].List}}
+					{{if $index%2 == 0}}
+					<li>
+						<dl class="clearfix">
+							<dt>{{$value.name}}</dt>
+							<dd>
+								<img src="{{$value.headPic}}" width="100%" scale-head name="{{$value.name}}" content="{{$value.intro}}"/>
+							</dd>
+						</dl>						
+					</li>
+					{{/if}}
+				{{/each}}
+			</ul>
+			<ul class="right-content" sc="page3-right">
+				{{each modelValue[2].List}}
+					{{if $index%2 != 0}}
+					<li>
+						<dl class="clearfix">
+							<dt>
+								<img src="{{$value.headPic}}" width="100%" scale-head name="{{$value.name}}" content="{{$value.intro}}"/>
+							</dt>
+							<dd>
+								{{$value.name}}
+							</dd>
+						</dl>
+					</li>
+					{{/if}}
+				{{/each}}
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+<div class="layer" pageIndex="3" data-role="layer">
+	<div class="bg">
+		<img src="{{modelValue[3].bg}}" width="100%" height="100%">
+	</div>
+	<div class="lay lay4">
+		<div>
+			{{=modelValue[3].word}}
+		</div>
+	</div>
+</div>
+
+
+
+<div class="layer" pageIndex="2" data-role="layer">
+	<div class="bg">
+		<img src="{{modelValue[4].bg}}" width="100%" height="100%">
+	</div>
+	<div class="lay lay5">
+		<div>{{=modelValue[4].word}}</div>
+	</div>
+</div>
+
+
+
+<div class="layer" pageIndex="1" data-role="layer">
+	<div class="bg">
+		<img src="{{modelValue[5].bg}}" width="100%" height="100%">
+	</div>
+	<div class="lay lay6">
+		<div class="tc">欢迎报名</div>
+		<div>
+			<ul>
+				{{each modelValue[5].List}}
+					{{if $value.isChecked == 0}}
+					<li>
+						<label>{{$value.name}}</label>
+						<input type="text" sub name="{{$value.inputName}}" />
+					</li>
+					{{/if}}
+				{{/each}}
+			</ul>
+			<div class="tc">
+				<button sign>报名</button>
+			</div>
+		</div>
+	</div>
+</div>	
+</script>
+
+
+<script type="text/html" id="model_02">
+<div class="model_02" data-role="layer">	
+	<div class="bg">
+		<img src="{{modelValue[0].bg}}" width="100%" height="100%">
+	</div>
+	<div class="main">
+		<div class="editor">
+			{{=modelValue[0].word}}
+		</div>
+		<div class="sign">
+			<div class="tc">欢迎报名</div>
+			<div>
+				<ul>
+					{{each modelValue[1].List}}
+						{{if $value.isChecked == 0}}
+						<li>
+							<label>{{$value.name}}</label>
+							<input type="text" sub name="{{$value.inputName}}" />
+						</li>
+						{{/if}}
+					{{/each}}
+				</ul>
+				<div class="tc">
+					<button sign>报名</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</script>		
+
+
+<script src="./sea.js"></script>
+<script>
+	seajs.config({
+		preload:['js/lib/zepto/zepto']
+	})
+
+	seajs.use('js/main/meeting');
+</script>
+ 
+
+</body>
+</html>

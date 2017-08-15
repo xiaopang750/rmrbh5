@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<title></title>
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/layout.css">
+</head>
+
+<body>
+<div class="page-wrap" page-wrap></div>
+
+<script type="text/html" id="page">
+<div class="head">
+	<img src="{{logo.modelData.logoUrl}}">
+</div>
+
+{{if textNav.modelData.length}}
+<div class="nav" id="nav-wrap">
+	<ul class="clearfix" nav-list-wrap>
+		{{each textNav.modelData}}
+			{{if $value.isused == 1}}
+				<li nav-list style="background:{{$value.labelColor}}">
+					<a href="javascript:;" linker="{{$value.pageUrl}}" pkSite="{{pkSite}}" style="color:{{$value.fontColor}}">
+						{{$value.textName}}
+					</a>
+				</li>
+			{{/if}}
+		{{/each}}
+	</ul>
+</div>
+{{/if}}
+
+<section class="focus">
+	<div widget-role="focus-wrap" widget-width="400" widget-height="300" widget-scale="1" style="margin:0 auto">
+		<ul class="focus_wrap" widget-role="focus-data-wrap">
+			{{each point.modelData}}
+				{{if $value.isused == 1}}
+				<li><img src="{{$value.imgUrl}}" linker="{{$value.pageUrl}}" pkSite="{{pkSite}}"/></li>
+				{{/if}}
+			{{/each}}
+		</ul>
+		<div class="dot_wrap" widget-role="focus-dot-wrap">
+			
+		</div>
+	</div>
+</section>
+
+
+<div class="add auto">
+	<h3 class="font_16 bold mb_10">
+		<a href="javascript:;" linker="{{textAdv.modelData.pageUrl}}" pkSite="{{pkSite}}" style="color:{{textAdv.modelData.mainFontColor}}">
+			{{textAdv.modelData.mainTitle}}
+		</a>
+	</h3>
+	<h4 class="font_14">
+		<a href="" style="color:{{textAdv.modelData.subFontColor}}">
+			{{textAdv.modelData.subTitle}}
+		</a>
+	</h4>
+</div>
+
+
+<div class="list1">
+	<ul>
+		{{each modelars.modelData}}
+			{{if $value.isused == 1 || !$value.isused}}
+				<li>
+					<a href="javascript:;" linker="{{$value.pageUrl}}" pkSite="{{pkSite}}">
+						<span class="ml_10" style="color:{{$value.fontColor}}">{{$value.modelName}}</span>
+						<span class="list_bg1"></span>
+					</a>
+				</li>
+			{{/if}}
+		{{/each}}
+	</ul>
+</div>
+</script>
+
+<script src="./sea.js"></script>
+<script>
+	seajs.config({
+		preload:['js/lib/zepto/zepto']
+	});
+	seajs.use('js/main/index');
+</script>
+</body>
+</html>

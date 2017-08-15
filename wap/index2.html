@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<title></title>
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/layout.css">
+</head>
+
+<body>
+<div class="page-wrap" page-wrap></div>
+
+<script type="text/html" id="page">
+<div class="head">
+	<img src="{{logo.modelData.logoUrl}}">
+</div>
+
+<section class="focus">
+	
+	<div widget-role="focus-wrap" widget-width="641" widget-height="400" widget-scale="1" style="margin:0 auto">
+		<ul class="focus_wrap" widget-role="focus-data-wrap">
+			{{each point.modelData}}
+				{{if $value.isused == 1}}
+					<li><img src="{{$value.imgUrl}}" linker="{{$value.pageUrl}}" pkSite="{{pkSite}}"/></li>
+				{{/if}}
+			{{/each}}
+		</ul>
+		<div class="dot_wrap" widget-role="focus-dot-wrap">
+			
+		</div>
+	</div>
+</section>
+
+<div class="list2">
+	<ul class="clearfix">
+	{{each modelars.modelData}}
+		<li linker="{{$value.pageUrl}}" pkSite="{{pkSite}}">
+			<img src="{{$value.iconBgUrl}}" alt="" width="60">
+			<div></div>
+			<span style="color:{{$value}}">{{$value.modelName}}</span>
+		</li>
+	{{/each}}	
+	</ul>
+</div>
+
+</script>
+
+<script src="./sea.js"></script>
+<script>
+	seajs.config({
+		preload:['js/lib/zepto/zepto']
+	})
+
+	seajs.use('js/main/index2');
+</script>
+</body>
+</html>

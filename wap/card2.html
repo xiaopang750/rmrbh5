@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<title></title>
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/layout.css">
+</head>
+
+<body>
+
+<div page-wrap>
+	
+</div>
+
+<script type="text/html" id="page">
+	{{if siteTextNav}}
+	<div class="nav" id="nav-wrap">
+		<ul class="clearfix" nav-list-wrap>
+			{{each siteTextNav}}
+				{{if $value.isused == 1}}
+					<li nav-list style="background:{{$value.labelColor}}">
+						<a href="javascript:;" linker="{{$value.pageUrl}}" pkSite="{{pkSite}}" style="color:{{$value.fontColor}}">
+							{{$value.textName}}
+						</a>
+					</li>
+				{{/if}}
+			{{/each}}
+		</ul>
+	</div>
+	{{/if}}
+
+	<div class="list1 sub2">
+		<ul page-wrap>
+			{{each modelars.modelData}}
+				{{if $value.isused == 1}}
+					<li class="clearfix">
+						<a href="javascript:;" linker="{{$value.pageUrl}}">
+							<img src="{{$value.iconBgUrl}}" height="30" width="94" class="mt_10 ml_10 fl">
+							<span class="fl ml_10" style="color:{{$value.mainFontColor}}">{{$value.mainTitle}}</span>
+							<span class="list_bg1"></span>
+						</a>	
+					</li>
+				{{/if}}
+			{{/each}}
+		</ul>
+	</div>
+</script>
+
+<script src="./sea.js"></script>
+<script>
+	seajs.config({
+		preload:['js/lib/zepto/zepto']
+	});
+
+	seajs.use('js/main/card2.js');
+</script>
+</body>
+</html>

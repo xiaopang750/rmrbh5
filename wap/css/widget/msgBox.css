@@ -1,0 +1,109 @@
+/**
+ *description:消息弹框样式
+ *author:fanwei
+ *date:2014/10/12
+ */
+
+.window {
+	width: 290px;
+	position: fixed;
+	bottom: 30px;
+	left: 50%;
+	z-index: 9999;
+	margin: -50px auto 0 -145px;
+	padding: 2px;
+	border-radius: 0.6em;
+	-webkit-border-radius: 0.6em;
+	-moz-border-radius: 0.6em;
+	background-color: #ffffff;
+	-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+	-o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+	font: 14px/1.5 Microsoft YaHei,Helvitica,Verdana,Arial,san-serif;
+	opacity: 0;
+	display: none;
+	height: 0;
+	overflow: hidden;
+}
+
+.window .title {
+	background-color: #A3A2A1;
+	line-height: 26px;
+	padding: 5px 5px 5px 10px;
+	color: #ffffff;
+	font-size: 16px;
+	border-radius: 0.5em 0.5em 0 0;
+	-webkit-border-radius: 0.5em 0.5em 0 0;
+	-moz-border-radius: 0.5em 0.5em 0 0;
+	background-image: -webkit-gradient(linear, left top, left bottom, from( #585858 ), to( #565656 ));
+	background-image: -webkit-linear-gradient(#585858, #565656);
+	background-image: -moz-linear-gradient(#585858, #565656);
+	background-image: -ms-linear-gradient(#585858, #565656);
+	background-image: -o-linear-gradient(#585858, #565656);
+	background-image: linear-gradient(#585858, #565656);
+}
+	
+ .window .title .close {
+	float: right;
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACTSURBVEhL7dNtCoAgDAZgb60nsGN1tPLVCVNHmg76kQ8E1mwv+GG27cestQ4PvTZ69SFocBGpWa8+zHt/Up+IN+MhgLlUmnIE1CpBQB2COZibfpnXhHFaIZkYph0SOeeK/QJ8o7KOek84fkCWSBtfL+Ny2MPpCkPFMH6PWEhWhKncIyEk69VfiUuVhqJefds+YcwNbEwxGqGIFWYAAAAASUVORK5CYII=");
+	width: 26px;
+	height: 26px;
+	display: block;
+}
+
+.window .content {
+	overflow: auto;
+	padding: 10px;
+	background: linear-gradient(#FBFBFB, #EEEEEE) repeat scroll 0 0 #FFF9DF;
+	color: #222222;
+	text-shadow: 0 1px 0 #FFFFFF;
+	border-radius: 0 0 0.6em 0.6em;
+	-webkit-border-radius: 0 0 0.6em 0.6em;
+	-moz-border-radius: 0 0 0.6em 0.6em;
+	height: 94px;
+}
+
+.window #txt {
+	min-height: 30px;
+	font-size: 16px;
+	line-height: 22px;
+	word-break:break-all;
+}
+
+.window .txtbtn {
+	background: #f1f1f1;
+	background-image: -webkit-gradient(linear, left top, left bottom, from( #DCDCDC ), to( #f1f1f1 ));
+	background-image: -webkit-linear-gradient( #ffffff , #DCDCDC );
+	background-image: -moz-linear-gradient( #ffffff , #DCDCDC );
+	background-image: -ms-linear-gradient( #ffffff , #DCDCDC );
+	background-image: -o-linear-gradient( #ffffff , #DCDCDC );
+	background-image: linear-gradient( #ffffff , #DCDCDC );
+	border: 1px solid #CCCCCC;
+	border-bottom: 1px solid #B4B4B4;
+	color: #555555;
+	font-weight: bold;
+	text-shadow: 0 1px 0 #FFFFFF;
+	border-radius: 0.6em 0.6em 0.6em 0.6em;
+	display: block;
+	width: 100%;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	cursor: pointer;
+	text-align: windowcenter;
+	font-weight: bold;
+	font-size: 18px;
+	padding: 6px;
+	margin: 10px 0 0 0;
+	outline: none;
+}
+
+.window .txtbtn:hover {
+	background-image: -webkit-gradient(linear, left top, left bottom, from( #ffffff ), to( #cccccc ));
+	background-image: -webkit-linear-gradient( #ffffff , #cccccc );
+	background-image: -moz-linear-gradient( #ffffff , #cccccc );
+	background-image: -ms-linear-gradient( #ffffff , #cccccc );
+	background-image: -o-linear-gradient( #ffffff , #cccccc );
+	background-image: linear-gradient( #ffffff , #cccccc );
+}

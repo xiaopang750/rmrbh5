@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.ui.theme" value="simple"></constant>
+    <constant name="struts.action.extension" value="do,action,,"></constant>
+    <package name="rmrb-mobilesite" namespace="/mobilesite" extends="rmrb-default">
+	   <action name="mobilesite*" class="com.rsdataservice.o2o.action.mobilesite.MobilesiteAction" method="{1}">
+	      <result type="json"></result>
+	   </action>
+		
+		<action name="jump" class="com.rsdataservice.o2o.action.mobilesite.MobilesiteAction" method="jumpPageByModelCode">
+	      <result name="indexOne" type="redirect">../wap/index.html?pkSite=${pkSite}&amp;pkPage=${pkPage}</result>
+	      <result name="indexTwo" type="redirect">../wap/index2.html?pkSite=${pkSite}&amp;pkPage=${pkPage}</result>
+	      <result name="indexThree" type="redirect">../wap/index3.html?pkSite=${pkSite}&amp;pkPage=${pkPage}</result>
+	      <result name="pageOne" type="redirect">../wap/card1.html?pkSite=${pkSite}&amp;pkPage=${pkPage}</result>
+	      <result name="pageTwo" type="redirect">../wap/card2.html?pkSite=${pkSite}&amp;pkPage=${pkPage}</result>
+	      <result name="pageThree" type="redirect">../wap/card3.html?pkSite=${pkSite}&amp;pkPage=${pkPage}</result>
+	       <result name="pageFour" type="redirect">../wap/card4.html?pkSite=${pkSite}&amp;pkPage=${pkPage}</result>
+	      <result name="error" type="redirect">../wap/error.html?notice=${notice}</result>
+	      
+	   </action>
+	   <action name="mobileVisit" class="com.rsdataservice.o2o.action.mobilesite.MobileNetVisitCountAction"></action>
+	</package>
+</struts>
+
+
+
+
+
+

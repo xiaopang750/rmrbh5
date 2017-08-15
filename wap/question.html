@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+<title>调查问卷</title>
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/question.css" />
+</head>
+
+<body page-wrap>
+
+<div wrap>
+	
+</div>
+
+<script type="text/html" id="page">
+
+	<h2 class="tc">{{=wjObject.title}}</h2>
+	{{each question}}
+		<div class="question" qid="{{$value.pkQuestion}}" result="" list-wrap index="{{$index}}">
+			<h3>问题{{$index + 1}}：{{=$value.questionname}}</h3>
+			<ul check-wrap>
+				{{each $value.options as value2 index2}}
+				<li>
+					<input type="{{$value.questiontype}}" aid="{{value2.pkSelect}}" name="{{$index}}" select />
+					<span>{{=value2.content}}</span>
+				</li>
+				{{/each}}
+			</ul>
+		</div>
+		
+	{{/each}}
+
+	<div class="tc">
+		<button commit>提交</button>	
+	</div>
+</script>	
+
+
+<script src="./sea.js"></script>
+<script>
+	seajs.config({
+		preload:['js/lib/zepto/zepto']
+	})
+
+	seajs.use('js/main/question');
+</script> 
+</body>
+</html>

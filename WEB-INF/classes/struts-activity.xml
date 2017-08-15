@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.ui.theme" value="simple"></constant>
+    <constant name="struts.action.extension" value="do,action,,"></constant>
+<!--   系统活动模块-->
+	<package name="rmrb-activity" namespace="/activity" extends="rmrb-default">
+		<!-- 活动评论部分开始 -->
+			<!-- 添加评论 -->
+			<action name="addReview" class="com.rsdataservice.o2o.action.activity.ActivityReviewAction" method="addReview">
+				<result type="json"></result>
+			</action>
+			<!-- 通过活动查看所有评论 -->
+			<action name="findAllReview" class="com.rsdataservice.o2o.action.activity.ActivityReviewAction" method="findReview">
+				<result type="json"></result>
+			</action>
+			<!--分页查看评论 -->
+			<action name="findReviewForPage" class="com.rsdataservice.o2o.action.activity.ActivityReviewAction" method="findReviewForPage">
+				<result type="json"></result>
+			</action>
+			<action name="findAllReviews" class="com.rsdataservice.o2o.action.activity.ActivityReviewAction" method="findAll">
+				<result type="json"></result>
+			</action>
+		<!-- 活动评论部分结束 -->
+		
+		<!-- 活动报名部分开始 -->
+			<!-- 添加报名信息 -->
+			<action name="addSign" class="com.rsdataservice.o2o.action.activity.ActivitySignAction" method="takePartIn">
+				<result type="json"></result>
+			</action>
+		<!-- 活动报名部分结束 -->
+		<!-- 会议邀约开始 -->
+			<action name="findMeetingFile" class="com.rsdataservice.o2o.action.activity.ActivityMeetingAction" method="findMeeting">
+				<result type="json"></result>
+			</action>
+		<!-- 会议邀约结束 -->
+		
+		<!-- 推送页面监控 -->
+			<action name="browseInfo" class="com.rsdataservice.o2o.action.activity.MonitorAction"></action>
+		<!-- 积分兑换商品查看 -->
+			<action name="queryIntegralExchange" class="com.rsdataservice.o2o.action.activity.IntegralExchangeAction" method="queryIntegralExchange">
+				<result type="json"></result>
+			</action>
+	</package>
+</struts>
+
+
+
+
+
+

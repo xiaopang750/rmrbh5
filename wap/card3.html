@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<title></title>
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/layout.css">
+</head>
+
+<body>
+<div page-wrap>
+	
+</div>
+
+<script type="text/html" id="page">
+	{{if siteTextNav}}
+	<div class="nav" id="nav-wrap">
+		<ul class="clearfix" nav-list-wrap>
+			{{each siteTextNav}}
+				{{if $value.isused == 1}}
+					<li nav-list style="background:{{$value.labelColor}}">
+						<a href="javascript:;" linker="{{$value.pageUrl}}" pkSite="{{pkSite}}" style="color:{{$value.fontColor}}">
+							{{$value.textName}}
+						</a>
+					</li>
+				{{/if}}
+			{{/each}}
+		</ul>
+	</div>
+	{{/if}}
+
+	<div class="list3">
+		<ul class="clearfix" page-wrap>
+			{{each modelars.modelData}}
+				{{if $value.isused == 1}}
+					<li>
+						<a href="javascript:;" linker="{{$value.pageUrl}}">
+							<div class="inner">
+								<dl>
+									<dt>
+										<img src="{{$value.iconBgUrl}}" alt="" height="30">
+									</dt>
+									<dd class="pt_10">
+										<h3 class="font_14 mb_5"  style="color:{{$value.mainFontColor}}">{{$value.mainTitle}}</h3>
+										<p style="color:{{$value.mainFontColor}}">{{$value.intro}}</p>
+									</dd>
+								</dl>
+							</div>
+							<div class="dec"></div>
+						</a>
+					</li>
+				{{/if}}
+			{{/each}}
+		</ul>
+	</div>
+</script>
+
+<script src="./sea.js"></script>
+<script>
+	seajs.config({
+		preload:['js/lib/zepto/zepto']
+	});
+
+	seajs.use('js/main/card3');
+</script>
+</body>
+</html>

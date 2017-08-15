@@ -1,0 +1,360 @@
+* {
+	margin:0;
+	padding:0;
+}
+
+body {
+	font-family: "Microsoft Yahei";
+	font-size: 12px;
+}
+
+img {
+	border:none;
+}
+
+ul,ol,li {
+	list-style:none;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 12px;
+	font-weight: normal;
+}
+
+.clearfix {
+	zoom:1
+}
+.clearfix:after {
+	visibility:hidden;
+	display:block;
+	font-size:0;
+	content:" ";
+	clear:both;
+	height:0;
+}
+
+.none {
+	display: none;
+}
+
+.show {
+	display: block;
+}
+
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
+
+.tc {
+	text-align: center;
+}
+
+
+
+body,html {
+	width: 100%;
+	height: 100%;
+	font-family: "Microsoft Yahei";
+}
+
+.layer {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left:0;
+	top:0;
+	background: #fff;
+	overflow: hidden;
+	display: none;
+}
+
+.banner {
+	width: 100%;
+	margin:0 auto 20px auto;
+	position: relative;
+	z-index: 2
+}
+
+.bg {
+	width: 100%;
+	height: 100%;
+	left:0;
+	top:0;
+	position: absolute;
+	z-index: 1;
+}
+
+.lay {
+	width: 90%;
+	height: 100%;
+	position: relative;
+	z-index: 2;
+	color:#fff;
+	margin:0 auto;
+	top:20px;
+}
+
+.wrap {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.lead {
+	position: fixed;
+	z-index: 2000;
+	width: 50px;
+	margin-left:-25px;
+	left:50%;
+	font-size: 12px;
+	color: #fff;
+	text-align: center;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: ease-in;
+}
+
+.lead img {
+	width: 50%;
+}
+
+[data-role = down] {
+	top:20px;
+	-webkit-animation-name:down;
+}
+
+[data-role = up] {
+	bottom:20px;
+	-webkit-animation-name:up;
+}
+
+@-webkit-keyframes up{
+	from {
+		-webkit-transform: translateY(0);
+	}
+	to {
+		-webkit-transform: translateY(-20px);
+	}
+}
+
+@-webkit-keyframes down{
+	from {
+		-webkit-transform: translateY(0);
+	}
+	to {
+		-webkit-transform: translateY(20px);
+	}
+}
+
+.lay1 {
+	color: #000;
+	width: 90%;
+	margin:0 auto;
+	position: relative;
+	z-index: 5;
+}
+
+.lay1 h2 {
+	font-size: 18px;
+	text-align: center;
+}
+
+.lay1 p {
+	line-height: 23px;
+}
+
+.lay2 ul {
+	width: 100%;
+	text-align: center;
+}
+
+.lay2 ul li {
+	width: 30%;
+	height: 100px;
+	margin:0 1% 10px 0;
+	opacity: 0;
+	float: left;
+}
+
+.lay2 ul li dl dt {
+	height: 20px;
+	text-align: center;
+	line-height: 20px;
+	background: blue;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.lay2 ul li dl dd {
+	background: #fff;
+	height: 80px;
+	text-align: center;
+	color:#000;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	overflow: hidden;
+}
+
+.lay3 ul {
+	width: 45%;
+	overflow: hidden;
+	-webkit-transition:1s;
+}
+
+.lay3 ul li img {
+	border-radius: 10px;
+}
+
+.lay3 ul li {
+	margin-bottom: 10px;
+}
+
+.lay3 ul.left-content li dt {
+	width: 30%;
+	float: left;
+	text-align: center;
+}
+
+.lay3 ul.left-content li dd {
+	width: 60%;
+	float: right;
+}
+
+.lay3 ul.right-content li dt {
+	width: 60%;
+	float: left;
+	text-align: center;
+}
+
+.lay3 ul.right-content li dd {
+	width: 30%;
+	float: right;
+}
+
+.lay3 ul.left-content {
+	float: left;
+	-webkit-transform:translateX(-200%);
+}
+
+.lay3 ul.right-content {
+	float: right;
+	-webkit-transform:translateX(200%);
+}
+
+.lay4 {
+	width: 80%;
+	height: 50%;
+	background: #fff;
+	margin:0 auto;
+	color:#000;
+	padding: 2% 2%;
+	overflow: auto;
+}
+
+.lay4 ul li {
+	margin-bottom: 10px;
+}
+
+.lay4 ul li .main {
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+
+.lay4 ul li .sub {
+	margin: 0 0 10px 24px;
+}
+
+
+
+.lay5 ul {
+	width: 80%;
+	margin:0 auto;
+}
+
+.lay5 h3 {
+	font-size: 18px;
+	margin-bottom: 10px;
+}
+
+.lay5 h3 {
+	text-align: center;
+}
+
+.lay5 ul li {
+	width: 40%;
+	margin-bottom: 10px;
+}
+
+.lay5 ul li:nth-child(odd) {
+	float: left;
+}
+
+.lay5 ul li:nth-child(even) {
+	float: right;
+}
+
+.lay5 ul li img {
+	width: 100px;
+	height: 100px;
+	border-radius: 10px;
+}
+
+.lay6 li {
+	margin-bottom: 10px;
+}
+
+.lay6 input {
+	width: 100%;
+	height: 28px;
+	line-height: 28px;
+}
+
+.lay6 button {
+	width: 100px;
+	height: 30px;
+}
+
+
+/* type2 */
+.model_02 {
+	color:#fff;
+	word-break:break-all;
+	padding: 20px 0
+}
+
+.model_02 img {
+	max-width: 100%!important;
+}
+
+.model_02 .main {
+	width: 90%;
+	position: relative;
+	z-index: 2;
+	margin: 0 auto;
+}
+
+.model_02 .bg {
+	position: fixed;
+}
+
+.model_02 .editor {
+	margin-bottom: 20px;
+}
+
+.model_02 .sign input {
+	width: 100%;
+	height: 28px;
+	line-height: 28px;
+	margin-bottom: 10px;
+}
+
+.model_02 .sign button {
+	width: 100px;
+	height: 30px;
+}
+
+

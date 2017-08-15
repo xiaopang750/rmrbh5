@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<title></title>
+<link rel="stylesheet" href="css/reset.css">
+<style>
+	body,html {
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+	}
+
+	.error-main {
+		width: 272px;
+		height: 300px;
+		text-align: center;
+		position: absolute;
+		margin:-150px 0 0 -136px;
+		left:50%;
+		top:40%;
+	}
+	
+	.error-main p {
+		padding:10px 0;
+		font-size: 20px;
+		font-family: "Microsoft Yahei";
+	}
+</style>
+</head>
+
+<body>
+	<div class="error-main">
+		<img src="./img/sorry.png">
+		<p>
+			<span>抱歉:</span>
+			<span id="msg"></span>
+		</p>
+	</div>
+
+<script>	
+	
+	var oMsg = document.getElementById('msg');
+
+	showMsg();
+
+	function showMsg() {
+
+		var search = window.location.search;
+
+		if(!search) {
+			return;
+		}
+
+		var msg = decodeURIComponent(search.split('?')[1].split('=')[1]);
+
+		oMsg.innerHTML = msg;	
+
+	}	
+</script>
+</body>
+</html>

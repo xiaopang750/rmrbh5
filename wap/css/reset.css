@@ -1,0 +1,51 @@
+* {
+	margin:0;
+	padding:0;
+}
+
+body {
+	font-family: "Microsoft Yahei";
+	font-size: 12px;
+}
+
+ul,ol,li {
+	list-style-type:none;
+}
+
+img {border:none;}
+
+a{
+	color:#4183c4; text-decoration:none;
+}
+a:hover {
+	color:#4183c4; 
+	text-decoration:none;
+}
+
+a:active {
+	text-decoration:none;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 12px;
+	font-weight: normal;
+}
+
+select {
+	vertical-align:middle;
+	border: none;
+}
+
+
+textarea {
+	resize:none;
+	outline: none;
+	font-size:12px;
+	overflow: auto;
+}
+
+input {
+	/* vertical-align: middle; */
+} 
+
+
